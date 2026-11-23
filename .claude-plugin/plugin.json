@@ -1,0 +1,9 @@
+{
+  "name": "mobilint",
+  "description": "Answer Mobilint NPU SDK questions from the official docs and community forum, with cited sources.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mobilint"
+  },
+  "license": "Apache-2.0"
+}

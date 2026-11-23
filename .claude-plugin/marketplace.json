@@ -1,0 +1,14 @@
+{
+  "name": "mobilint",
+  "description": "Mobilint NPU SDK skills for AI coding agents.",
+  "owner": {
+    "name": "Mobilint"
+  },
+  "plugins": [
+    {
+      "name": "mobilint",
+      "source": "./",
+      "description": "Answer Mobilint NPU SDK questions from the official docs and community forum, with cited sources."
+    }
+  ]
+}
