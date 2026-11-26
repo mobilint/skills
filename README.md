@@ -15,6 +15,8 @@ claude plugin install mobilint@mobilint
 
 Or run `/plugin` inside Claude Code.
 
+To get updates automatically, run `/plugin`, open **Marketplaces**, select **mobilint**, and enable auto-update.
+
 ### Codex
 
 Install from the Mobilint plugin marketplace:
@@ -41,6 +43,29 @@ Clone this repo and copy the skill folders into the appropriate directory for yo
 | Claude Code | `~/.claude/skills/` | [docs](https://code.claude.com/docs/en/skills) |
 | OpenCode | `~/.config/opencode/skills/` | [docs](https://opencode.ai/docs/skills/) |
 | OpenAI Codex | `~/.codex/skills/` | [docs](https://developers.openai.com/codex/skills/) |
+
+## Updating
+
+Codex updates the plugin automatically. To update manually:
+
+Claude Code:
+
+```sh
+claude plugin marketplace update mobilint
+claude plugin update mobilint@mobilint
+```
+
+Codex:
+
+```sh
+codex plugin marketplace upgrade mobilint
+```
+
+npx skills:
+
+```sh
+npx skills update
+```
 
 ## Skills
 

@@ -1,12 +1,12 @@
 ---
 name: mobilint-sdk
 description: Use for any question about Mobilint (모빌린트) NPU products and the qb SDK — compiling, quantizing and running models, Mobilint devices, drivers and firmware. Answers from the official docs at docs.mobilint.com, falling back to the community forum at discuss.mobilint.com, with cited sources. Use only when the question or the code at hand names Mobilint or one of its products, tools or file formats; not for general ML questions or other vendors' products. If it is unclear whether a question concerns Mobilint, ask the user before using this skill.
-allowed-tools: WebFetch(domain:docs.mobilint.com), WebFetch(domain:discuss.mobilint.com)
+allowed-tools: WebFetch(domain:docs.mobilint.com), WebFetch(domain:discuss.mobilint.com), WebFetch(domain:github.com), WebFetch(domain:api.github.com), WebFetch(domain:raw.githubusercontent.com)
 ---
 
 # Mobilint SDK support
 
-Answer from the official docs (https://docs.mobilint.com) first. Use the community forum (https://discuss.mobilint.com) only when the docs are missing, insufficient, or need confirming. Mobilint-specific facts (APIs, options, device names, compatibility) come from these sources, not from memory.
+Answer from the official docs (https://docs.mobilint.com) first. For new code and for errors in Mobilint's libraries, also check Mobilint's public code. Use the community forum (https://discuss.mobilint.com) only when these are missing, insufficient, or need confirming. Mobilint-specific facts (APIs, options, device names, compatibility) come from these sources, not from memory.
 
 ## 1. Identify the product and version
 
@@ -31,7 +31,16 @@ If the version is unknown and the answer depends on it, ask. If you proceed anyw
 5. Copy code, options, error messages and version numbers exactly.
 6. SDK packages, drivers and firmware are downloaded from https://dl.mobilint.com, which requires sign-in. Point the user there; do not try to fetch or list it.
 
-## 3. Forum (when the docs are not enough)
+## 3. Code (new code and library errors)
+
+Mobilint publishes libraries, examples and tutorials at https://github.com/mobilint (list: https://api.github.com/orgs/mobilint/repos, skip archived repositories). Some of these libraries are not covered by the manuals.
+
+- Before writing new Mobilint code, look for a library or example there that already does the task, and build on it instead of reimplementing it.
+- When an error comes from one of these libraries, read its README and compare its required versions with the user's environment.
+- Read files at `https://raw.githubusercontent.com/mobilint/<repo>/HEAD/<path>`.
+- Repository code can lag behind the SDK. Where it disagrees with the manuals, the manuals win.
+
+## 4. Forum (when the docs are not enough)
 
 Search the forum when the docs do not answer the question, when the user's symptom does not match documented behavior (it may be a known bug), or when a workaround for the user's version is needed.
 
@@ -44,15 +53,15 @@ Search the forum when the docs do not answer the question, when the user's sympt
   - if the topic ends with an unanswered question, say there is no later answer
 - Independent forum requests can go out together, a few at a time; large bursts are rate-limited. On HTTP 429, stop and tell the user instead of retrying.
 
-## 4. Answer
+## 5. Answer
 
 - Lead with the answer, then the evidence.
-- Cite a URL for every Mobilint-specific claim, and only sources you actually read: docs as the HTML page URL, forum as `https://discuss.mobilint.com/t/<id>`.
+- Cite a URL for every Mobilint-specific claim, and only sources you actually read: docs as the page a person can open, which is the URL you read without the trailing `index.md`, code as the GitHub page of the repository or file, forum as `https://discuss.mobilint.com/t/<id>`.
 - State which docs version you read. Something documented only in a newer version does not exist in the user's version: say which version added it.
 - For forum evidence, say who (Mobilint engineer or user), when, and for which version.
 - If docs and forum disagree, show both and explain which applies to the user's version.
 - If no source covers it, say so, ask for what would help (versions, full log, reproduction), and offer the forum post below. Do not guess.
-## 5. When it stays unresolved
+## 6. When it stays unresolved
 
 Suggest posting on https://discuss.mobilint.com and draft the post: product, SDK versions, OS or container image, full error log, minimal reproduction steps, and what was already tried (with the docs and forum links checked). The forum is public: tell the user to remove secrets, internal paths, hostnames and serial numbers from logs before posting.
 
