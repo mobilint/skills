@@ -6,7 +6,7 @@ allowed-tools: WebFetch(domain:docs.mobilint.com), WebFetch(domain:discuss.mobil
 
 # Mobilint SDK support
 
-Answer from the official docs (https://docs.mobilint.com) first. For new code and for errors in Mobilint's libraries, also check Mobilint's public code. Use the community forum (https://discuss.mobilint.com) only when these are missing, insufficient, or need confirming. Mobilint-specific facts (APIs, options, device names, compatibility) come from these sources, not from memory.
+Answer from the official docs (https://docs.mobilint.com) first, and use Mobilint's public code where working examples help. Use the community forum (https://discuss.mobilint.com) only when these are missing, insufficient, or need confirming. Mobilint-specific facts (APIs, options, device names, compatibility) come from these sources, not from memory.
 
 ## 1. Identify the product and version
 
@@ -31,14 +31,11 @@ If the version is unknown and the answer depends on it, ask. If you proceed anyw
 5. Copy code, options, error messages and version numbers exactly.
 6. SDK packages, drivers and firmware are downloaded from https://dl.mobilint.com, which requires sign-in. Point the user there; do not try to fetch or list it.
 
-## 3. Code (new code and library errors)
+## 3. Code
 
-Mobilint publishes libraries, examples and tutorials at https://github.com/mobilint (list: https://api.github.com/orgs/mobilint/repos, skip archived repositories). Some of these libraries are not covered by the manuals.
+Mobilint publishes libraries, examples and tutorials at https://github.com/mobilint (list: https://api.github.com/orgs/mobilint/repos, skip archived repositories). They show how Mobilint itself uses the SDK, which dependency versions each library requires, and libraries the manuals do not cover. Use them whenever that helps, for example to build on existing code instead of reimplementing it, to see how the runtime is driven for performance, or to debug one of these libraries.
 
-- Before writing new Mobilint code, look for a library or example there that already does the task, and build on it instead of reimplementing it.
-- When an error comes from one of these libraries, read its README and compare its required versions with the user's environment.
-- Read files at `https://raw.githubusercontent.com/mobilint/<repo>/HEAD/<path>`.
-- Repository code can lag behind the SDK. Where it disagrees with the manuals, the manuals win.
+Read files at `https://raw.githubusercontent.com/mobilint/<repo>/HEAD/<path>`. If the GitHub API is rate-limited (HTTP 403 or 429), use the web pages instead: https://github.com/orgs/mobilint/repositories for the list and `https://github.com/mobilint/<repo>/tree/HEAD/<path>` for directory listings. Repository code can lag behind the SDK. Where it disagrees with the manuals, the manuals win.
 
 ## 4. Forum (when the docs are not enough)
 
